@@ -1,4 +1,4 @@
-h1, h2 {
+/* h1, h2 {
   font-weight: 700;
 }
 
@@ -8,4 +8,16 @@ h3, h4 {
 
 p, span {
   font-weight: 400;
+} */
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
