@@ -1,1 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap');
+@import './styles/variables.css';
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--rose-50);
+  color: var(--rose-900);
+  line-height: 1.5;
+}
 
