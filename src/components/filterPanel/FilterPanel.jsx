@@ -5,14 +5,17 @@ function FilterPanel({ categories, onCategorySelect, onSearch }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-    onCategorySelect(category);
+
+
+  const lower = category.toLowerCase();
+  setSelectedCategory(lower);
+  onCategorySelect(lower);
   };
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
      console.log('🕵️‍♀️ Buscando:', value); // <--- agregá esto
-    setSearchTerm(value);
+     setSearchTerm(value);
     onSearch(value);
   };
 

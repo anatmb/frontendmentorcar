@@ -39,9 +39,14 @@ function App() {
       <Header />
       <div style={{ display: 'flex', minHeight: '100vh' }}>
         <FilterPanel
-          categories={categories}
-          onCategorySelect={setSelectedCategory}
-          onSearch={setSearchTerm}
+          // categories={categories}
+          // onCategorySelect={setSelectedCategory}
+          // onSearch={setSearchTerm}
+           categories={categories}
+  selectedCategory={selectedCategory}
+  searchTerm={searchTerm}
+  onCategorySelect={setSelectedCategory}
+  onSearch={setSearchTerm}
         />
 
         <main style={{ flexGrow: 1, padding: '1rem' }}>
