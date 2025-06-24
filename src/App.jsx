@@ -18,10 +18,13 @@ function App() {
 
  // Filtrar productos según categoría y búsqueda
   const filteredProducts = useMemo(() => {
+
+      console.log("🔎 Filtrando con categoría:", selectedCategory);
+  console.log("🔎 Filtrando con término:", searchTerm);
     return data.filter((product) => {
       const matchCategory =
         selectedCategory === 'all' ||
-        product.category.toLowerCase() === selectedCategory.toLowerCase();
+        product.category.toLowerCase() === selectedCategory;
 
       const matchSearch = product.name
         .toLowerCase()
@@ -39,14 +42,11 @@ function App() {
       <Header />
       <div style={{ display: 'flex', minHeight: '100vh' }}>
         <FilterPanel
-          // categories={categories}
-          // onCategorySelect={setSelectedCategory}
-          // onSearch={setSearchTerm}
            categories={categories}
-  selectedCategory={selectedCategory}
-  searchTerm={searchTerm}
-  onCategorySelect={setSelectedCategory}
-  onSearch={setSearchTerm}
+           selectedCategory={selectedCategory}
+           searchTerm={searchTerm}
+           onCategorySelect={setSelectedCategory}
+           onSearch={setSearchTerm}
         />
 
         <main style={{ flexGrow: 1, padding: '1rem' }}>
