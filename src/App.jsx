@@ -18,6 +18,9 @@ function App() {
 
  // Filtrar productos según categoría y búsqueda
   const filteredProducts = useMemo(() => {
+    console.log("🔍 selectedCategory:", selectedCategory);
+console.log("🔍 searchTerm:", searchTerm);
+console.log("🔍 categories in data:", data.map(p => p.category));
     return data.filter((product) => {
       const matchCategory =
         selectedCategory === 'All' ||
