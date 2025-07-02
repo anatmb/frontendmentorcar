@@ -41,16 +41,10 @@ function App() {
     <div className="app">
       <Header />
       <div style={{ display: 'flex', minHeight: '100vh' }}>
-        <FilterPanel
-           categories={categories}
-           selectedCategory={selectedCategory}
-           searchTerm={searchTerm}
-           onCategorySelect={setSelectedCategory}
-           onSearch={setSearchTerm}
-        />
+      
 
         <main style={{ flexGrow: 1, padding: '1rem' }}>
-          <h1>Product List</h1>
+          <h1>Desserts</h1>
           <div className="product-grid">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -59,8 +53,16 @@ function App() {
           </div>
         </main>
 
+          <FilterPanel
+           categories={categories}
+           selectedCategory={selectedCategory}
+           searchTerm={searchTerm}
+           onCategorySelect={setSelectedCategory}
+           onSearch={setSearchTerm}
+        />
 
-        
+
+
       </div>
     </div>
 

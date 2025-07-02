@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <header style={{ padding: '1rem', position: 'relative', display: 'flex',justifyContent: 'space-between',alignItems: 'center' }}>
-      <h1>Product List</h1>
+      <h1>Pasteleria</h1>
        <button onClick={() => setIsCartOpen(true)}>
         🛒 ({cartCount})
        </button>
