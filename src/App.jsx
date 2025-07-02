@@ -58,6 +58,9 @@ function App() {
             {filteredProducts.length === 0 && <p>No hay productos.</p>}
           </div>
         </main>
+
+
+        
       </div>
     </div>
 
