@@ -11,7 +11,7 @@ function Header() {
    const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <header style={{ padding: '1rem', position: 'relative' }}>
+    <header style={{ padding: '1rem', position: 'relative', display: 'flex',justifyContent: 'space-between',alignItems: 'center' }}>
       <h1>Product List</h1>
        <button onClick={() => setIsCartOpen(true)}>
         🛒 ({cartCount})
