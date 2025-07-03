@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './ProductCard.module.css';
  import { useCart } from '../context/CartContext';
+ 
 
 // function ProductCard({ product }) {
 //    const { addToCart } = useCart();
@@ -52,8 +53,8 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="product-card">
-      <img src={product.image.desktop} alt={product.name} />
+    <div className={styles.card}>
+      <img src={product.image.desktop} alt={product.name}   className={styles.image} />
       <div className="product-info">
         <p className="category">{product.category}</p>
         <h3>{product.name}</h3>
