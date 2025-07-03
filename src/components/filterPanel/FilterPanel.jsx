@@ -20,7 +20,7 @@ function FilterPanel({ categories, selectedCategory, searchTerm, onCategorySelec
   };
 
   return (
-    <aside style={{ padding: '1rem', borderRight: '1px solid #ccc', minWidth: '200px' }}>
+    <aside style={{ padding: '1rem', borderLeft: '1px solid #ccc', minWidth: '200px' }}>
       <input
         type="text"
         placeholder="Buscar productos..."
