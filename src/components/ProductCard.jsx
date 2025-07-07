@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ProductCard.module.css';
  import { useCart } from '../context/CartContext';
- 
+
 
 // function ProductCard({ product }) {
 //    const { addToCart } = useCart();
@@ -55,17 +55,17 @@ function ProductCard({ product }) {
   return (
     <div className={styles.card}>
       <img src={product.image.desktop} alt={product.name}   className={styles.image} />
-      <div className="product-info">
+      <div className="product-info quantity-control">
         <p className="category">{product.category}</p>
         <h3>{product.name}</h3>
         <p className="price">${product.price.toFixed(2)}</p>
 
         {quantity === 0 ? (
-          <button className="add-to-cart-btn" onClick={handleAdd}>
+          <button className={styles['add-to-cart-btn']} onClick={handleAdd}>
             🛒 Add to Cart
           </button>
         ) : (
-          <div className="quantity-control">
+          <div className={styles['quantity-control']}>
             <button onClick={handleDecrease}>−</button>
             <span>{quantity}</span>
             <button onClick={handleAdd}>＋</button>
