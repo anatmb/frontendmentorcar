@@ -55,7 +55,7 @@ function ProductCard({ product }) {
   return (
     <div className={styles.card}>
       <img src={product.image.desktop} alt={product.name}   className={styles.image} />
-      <div className="product-info quantity-control">
+      <div className="product-info">
         
         {quantity === 0 ? (
           <button className={styles['add-to-cart-btn']} onClick={handleAdd}>
