@@ -56,10 +56,7 @@ function ProductCard({ product }) {
     <div className={styles.card}>
       <img src={product.image.desktop} alt={product.name}   className={styles.image} />
       <div className="product-info quantity-control">
-        <p className="category">{product.category}</p>
-        <h3>{product.name}</h3>
-        <p className="price">${product.price.toFixed(2)}</p>
-
+        
         {quantity === 0 ? (
           <button className={styles['add-to-cart-btn']} onClick={handleAdd}>
             🛒 Add to Cart
@@ -71,6 +68,12 @@ function ProductCard({ product }) {
             <button onClick={handleAdd}>＋</button>
           </div>
         )}
+
+
+        <p className="category">{product.category}</p>
+        <h3>{product.name}</h3>
+        <p className="price">${product.price.toFixed(2)}</p>
+
       </div>
     </div>
   );
