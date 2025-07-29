@@ -17,7 +17,7 @@ function CartSidebar({ onClose }) {
 
       <div className={styles.sidebar}>
         <button className={styles.close} onClick={onClose}>✕</button>
-        <h2>Tu carrito</h2>
+        <h2>Tu carritooooo</h2>
 
         {cartItems.length === 0 ? (
           <p className={styles.empty}>El carrito está vacío.</p>
@@ -44,6 +44,7 @@ function CartSidebar({ onClose }) {
               <strong>Total: ${totalPrice.toFixed(2)}</strong>
               <button onClick={clearCart}>Vaciar carrito</button>
             </div>
+            <button>Confirmar orden</button>
           </>
         )}
       </div>

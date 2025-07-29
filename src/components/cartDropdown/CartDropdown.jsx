@@ -15,7 +15,7 @@ function CartDropdown() {
 
   return (
     <div className={styles.dropdown}>
-      <h3>Carrito</h3>
+      <h3>Carritoooooooooo</h3>
       <ul className={styles.list}>
         {cartItems.map((item) => (
           <li key={item.id} className={styles.item}>
