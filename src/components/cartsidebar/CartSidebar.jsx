@@ -44,7 +44,10 @@ function CartSidebar({ onClose }) {
               <strong>Total: ${totalPrice.toFixed(2)}</strong>
               <button onClick={clearCart}>Vaciar carrito</button>
             </div>
-            <button>Confirmar orden</button>
+            <div className={styles.confirmar}>
+                 <button className={styles['add-to-cart-btn']}>Confirmar orden</button>
+            </div>
+           
           </>
         )}
       </div>

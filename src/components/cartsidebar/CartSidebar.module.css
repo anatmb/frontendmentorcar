@@ -85,3 +85,25 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.add-to-cart-btn {
+   background-color: #f97316;
+  color: rgb(14, 14, 14);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 2px solid #f97316;
+  font-weight: 500;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.confirmar{
+  padding: 10px;
+  width: 100%;
+  /* background-color: fuchsia; */
+}
