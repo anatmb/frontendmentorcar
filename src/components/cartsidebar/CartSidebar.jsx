@@ -11,6 +11,28 @@ function CartSidebar({ onClose }) {
     0
   );
 
+
+  const handleConfirmOrder = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/api/payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items: cartItems, // los productos que tenés en el carrito
+      }),
+    });
+
+    const data = await response.json();
+    if (data.init_point) {
+      window.location.href = data.init_point; // redirige a Mercado Pago
+    }
+  } catch (error) {
+    console.error('Error al confirmar pedido:', error);
+  }
+};
+
   return (
     <>
       <div className={styles.overlay} onClick={onClose}></div>
@@ -45,7 +67,7 @@ function CartSidebar({ onClose }) {
               <button onClick={clearCart}>Vaciar carrito</button>
             </div>
             <div className={styles.confirmar}>
-                 <button className={styles['add-to-cart-btn']}>Confirmar orden</button>
+                 <button className={styles['add-to-cart-btn']} onClick={handleConfirmOrder}>Confirmar orden</button>
             </div>
            
           </>
