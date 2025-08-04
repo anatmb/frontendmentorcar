@@ -1,11 +1,16 @@
 import { useCart } from '../../context/CartContext'
 import styles from './CartSidebar.module.css';
+import { useState } from 'react';
+import OrderConfirmation from '../OrderConfirmation/OrderConfirmation';
+
+
+
 
 
 function CartSidebar({ onClose }) {
   const { cartItems, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } = useCart();
 
-
+ const [showConfirmation, setShowConfirmation] = useState(false);
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -25,12 +30,30 @@ const handleConfirmOrder = async () => {
 
     if (!response.ok) throw new Error('Error en el pedido');
 
-    const data = await response.json();
-    alert("aqui es",data.message); // "Pedido confirmado"
+    // const data = await response.json();
+        // Mostrar modal en lugar de alert
+    setShowConfirmation(true);
+    clearCart(); // opcional
+    // alert("aqui es",data.message); // "Pedido confirmado"
   } catch (error) {
     console.error('Error al confirmar pedido:', error);
   }
 };
+
+
+  // ✅ Mostrar pantalla de confirmación si se confirma el pedido
+  if (showConfirmation) {
+    return (
+      <OrderConfirmation
+        items={cartItems}
+        total={totalPrice}
+        onClose={() => {
+          setShowConfirmation(false);
+          onClose();
+        }}
+      />
+    );
+  }
 
   return (
     <>
