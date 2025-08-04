@@ -26,7 +26,7 @@ const handleConfirmOrder = async () => {
     if (!response.ok) throw new Error('Error en el pedido');
 
     const data = await response.json();
-    alert(data.message); // "Pedido confirmado"
+    alert("aqui es",data.message); // "Pedido confirmado"
   } catch (error) {
     console.error('Error al confirmar pedido:', error);
   }
@@ -38,7 +38,7 @@ const handleConfirmOrder = async () => {
 
       <div className={styles.sidebar}>
         <button className={styles.close} onClick={onClose}>✕</button>
-        <h2>Tu carritooooo</h2>
+        <h2>Tu carrito</h2>
 
         {cartItems.length === 0 ? (
           <p className={styles.empty}>El carrito está vacío.</p>
