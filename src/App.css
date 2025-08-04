@@ -12,13 +12,38 @@ p, span {
 } */
 
 .app {
-  max-width: 1200px;
+  /* max-width: 1200px;
+  height: 100vh;
   margin: auto;
   padding: 2rem;
+  background-color: blueviolet; */
+
+   max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 2rem;
+  /* background-color: blueviolet; */
 }
 
 .product-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
   gap: 2rem;
+}
+
+/* Para tablets (2 tarjetas por fila) */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Para móviles (1 tarjeta por fila) */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
