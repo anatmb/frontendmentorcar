@@ -18,8 +18,12 @@ function FilterPanel({ categories, selectedCategory, searchTerm, onCategorySelec
     onCategorySelect('all');
   }
   };
-
+    
+ 
   return (
+   
+
+
     <aside style={{ padding: '1rem', borderLeft: '1px solid #ccc', minWidth: '200px' }}>
       <input
         type="text"

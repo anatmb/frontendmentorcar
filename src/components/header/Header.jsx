@@ -1,8 +1,9 @@
-import { useCart } from '../../context/CartContext';
+
 import './Header.css';
 import { useState } from 'react';
 import CartDropdown from '../cartDropdown/CartDropdown';
 import CartSidebar from '../cartsidebar/CartSidebar';
+import { useCart } from '../../context/CartContext';
 
 
 function Header() {

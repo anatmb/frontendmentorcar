@@ -68,7 +68,7 @@ p, span {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-    transform: translatey(-50%);
+    /* transform: translatey(-50%); */
 }
 
 /* ➕➖ Controles de cantidad */
@@ -82,7 +82,7 @@ p, span {
   justify-content:space-between;
   gap: 0.5rem;
   width: 60%;
-  transform: translatey(-50%);
+  /* transform: translatey(-50%); */
 }
 
 /* Botones + y - */
