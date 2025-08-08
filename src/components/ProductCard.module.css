@@ -89,7 +89,7 @@ color: #ffffff;
 
 /* Botones + y - */
 .quantity-control button {
-     background-color:  transparent !important;
+     background-color:  transparent;
   /* background-color: #faf7f5; */
   color:#ffffff;
   font-size: 1rem;
@@ -103,6 +103,11 @@ color: #ffffff;
   align-items: center;
   justify-content: center;
    
+}
+
+.quantity-control button:hover {
+  background-color: #ffffff;
+  color: #f97316;
 }
 
 /* Número del medio */
