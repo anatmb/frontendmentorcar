@@ -1,11 +1,11 @@
-/* .app {
+.app {
    max-width: 1200px;
   width: 100%;
   margin: auto;
   padding: 2rem;
-  /* background-color: blueviolet;
-}
 
+}
+/* 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila 
@@ -48,7 +48,7 @@
 /* 📋 Estilo filtro */
 aside {
   padding: 1rem;
-  border-left: 1px solid #ccc;
+
   min-width: 200px;
 }
 
@@ -59,8 +59,6 @@ aside {
   }
 
   aside {
-    border-left: none;
-    border-bottom: 1px solid #ccc;
     width: 100%;
     order: -1;
   }
@@ -99,8 +97,7 @@ aside {
   }
 
   aside {
-    border-left: none;
-    border-bottom: 1px solid #ccc;
+ 
     width: 100%;
     order: -1;
   }
@@ -132,15 +129,15 @@ aside {
   }
 }
 
-/* 🖥 Escritorio grande: ≥ 1440px */
+/* 🖥 Escritorio grande: ≥ 991px */
 @media (min-width: 991px) {
   .layout {
     flex-direction: row;
   }
 
   aside {
-    border-left: 1px solid #ccc;
-    border-bottom: none;
+
+      border-left: 1px solid #ccc;
     min-width: 200px;
     order: 1; /* Filtro a la derecha */
   }
