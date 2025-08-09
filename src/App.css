@@ -136,8 +136,7 @@ aside {
   }
 
   aside {
-
-      border-left: 1px solid #ccc;
+    border-left: 1px solid #ccc;
     min-width: 200px;
     order: 1; /* Filtro a la derecha */
   }
