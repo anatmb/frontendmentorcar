@@ -1,5 +1,3 @@
-
-
 function FilterPanel({ categories, selectedCategory, searchTerm, onCategorySelect, onSearch }) {
   const handleCategoryClick = (category) => {
     // onCategorySelect(category.toLowerCase());
@@ -19,11 +17,7 @@ function FilterPanel({ categories, selectedCategory, searchTerm, onCategorySelec
   }
   };
     
- 
   return (
-   
-
-
     <aside style={{ padding: '1rem', borderLeft: '1px solid #ccc', minWidth: '200px' }}>
       <input
         type="text"

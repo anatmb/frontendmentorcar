@@ -1,27 +1,109 @@
-.app {
+/* .app {
    max-width: 1200px;
   width: 100%;
   margin: auto;
   padding: 2rem;
-  /* background-color: blueviolet; */
+  /* background-color: blueviolet;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila 
   gap: 2rem;
 }
 
-/* Para tablets (2 tarjetas por fila) */
+/* Para tablets (2 tarjetas por fila) 
 @media (max-width: 900px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Para móviles (1 tarjeta por fila) */
+/* Para móviles (1 tarjeta por fila) 
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: 1fr;
+  }
+} */
+
+/* 🎯 Layout general */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+/* 📦 Grid de productos: por defecto 3 columnas */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* 📋 Estilo filtro */
+aside {
+  padding: 1rem;
+  border-left: 1px solid #ccc;
+  min-width: 200px;
+}
+
+/* 📱 Mobile: ≤ 375px */
+@media (max-width: 375px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  aside {
+    border-left: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    order: -1;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 📲 Pantallas medianas: >375px y <1440px */
+@media (min-width: 376px) and (max-width: 1439px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  aside {
+    border-left: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    order: -1;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* 🖥 Escritorio grande: ≥ 1440px */
+@media (min-width: 1440px) {
+  .layout {
+    flex-direction: row;
+  }
+
+  aside {
+    border-left: 1px solid #ccc;
+    border-bottom: none;
+    min-width: 200px;
+    order: 1; /* Filtro a la derecha */
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
