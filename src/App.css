@@ -5,28 +5,7 @@
   padding: 2rem;
 
 }
-/* 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila 
-  gap: 2rem;
-}
-
-/* Para tablets (2 tarjetas por fila) 
-@media (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Para móviles (1 tarjeta por fila) 
-@media (max-width: 600px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-} */
-
-/* 🎯 Layout general */
+/*Layout general */
 .layout {
   display: flex;
   min-height: 100vh;
@@ -38,21 +17,19 @@
   padding: 1rem;
 }
 
-/* 📦 Grid de productos: por defecto 3 columnas */
+/*Grid de productos: por defecto 3 columnas */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-/* 📋 Estilo filtro */
 aside {
   padding: 1rem;
-
   min-width: 200px;
 }
 
-/* 📱 Mobile: ≤ 375px */
+/*Mobile: ≤ 375px */
 @media (max-width: 375px) {
   .layout {
     flex-direction: column;
@@ -63,12 +40,12 @@ aside {
     order: -1;
   }
 
-  /* 🔹 Categorías en horizontal y con salto de línea si no caben */
+  /*Categorías en horizontal y con salto de línea si no caben */
   aside ul {
     display: flex;
-    flex-wrap: wrap; /* permite que bajen a la siguiente fila */
-    justify-content: center; /* centra horizontalmente */
-    gap: 0.5rem; /* espacio entre categorías */
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 0.5rem;
     padding: 0;
   }
 
@@ -77,7 +54,7 @@ aside {
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     cursor: pointer;
-    white-space: nowrap; /* evita que se partan palabras */
+    white-space: nowrap;
   }
 
   aside li:hover {
@@ -101,12 +78,12 @@ aside {
     width: 100%;
     order: -1;
   }
-    /* 🔹 Categorías en horizontal y con salto de línea si no caben */
+    /*Categorías en horizontal y con salto de línea si no caben */
   aside ul {
     display: flex;
-    flex-wrap: wrap; /* permite que bajen a la siguiente fila */
-    justify-content: center; /* centra horizontalmente */
-    gap: 0.5rem; /* espacio entre categorías */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 0.5rem; 
     padding: 0;
   }
 
@@ -115,13 +92,12 @@ aside {
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     cursor: pointer;
-    white-space: nowrap; /* evita que se partan palabras */
+    white-space: nowrap;
   }
 
   aside li:hover {
     background: #ddd;
   }
-
 
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -129,18 +105,16 @@ aside {
   }
 }
 
-/* 🖥 Escritorio grande: ≥ 991px */
+/* Escritorio grande: ≥ 991px */
 @media (min-width: 991px) {
   .layout {
     flex-direction: row;
   }
-
   aside {
     border-left: 1px solid #ccc;
     min-width: 200px;
-    order: 1; /* Filtro a la derecha */
+    order: 1;
   }
-
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
