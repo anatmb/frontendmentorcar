@@ -9,14 +9,11 @@
   z-index: 99;
 }
 
-.carrito-vacio {
+
+
+img{  
   display: flex;
-  flex-direction: column;
-  align-items: center;   
-  justify-content: center; 
-  text-align: center;   
-  height: 100%;  
-  background-color: #f97316;   
+  margin: auto;
 }
 
 /* Sidebar lateral */

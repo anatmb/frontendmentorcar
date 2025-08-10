@@ -69,7 +69,7 @@ function CartSidebar({ onClose }) {
         <h2>Your Cart ( {cartItems.length} )</h2>
         {cartItems.length === 0 ? (
           <div className="carrito-vacio">
-            <p className={styles.empty}>El carrito está vacío.</p>
+            <p className={styles.empty}>El carrito está vacíoooo.</p>
             <img  src="/assets/images/illustration-empty-cart.svg" alt="Carrito vacío" />
           </div>
         ) : (
