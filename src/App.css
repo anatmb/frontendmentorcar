@@ -30,7 +30,7 @@ aside {
 }
 
 /*Mobile: ≤ 375px */
-@media (max-width: 375px) {
+@media (max-width: 600px) {
   .layout {
     flex-direction: column;
   }
@@ -68,7 +68,7 @@ aside {
 }
 
 /* 📲 Pantallas medianas: >375px y <990px */
-@media (min-width: 376px) and (max-width: 990px) {
+@media (min-width: 600px) and (max-width: 990px) {
   .layout {
     flex-direction: column;
   }
