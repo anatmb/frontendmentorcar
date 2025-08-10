@@ -1,10 +1,16 @@
-import { useCart } from '../../context/CartContext';
-import styles from './CartSidebar.module.css';
-import { useState } from 'react';
-import OrderConfirmation from '../OrderConfirmation/OrderConfirmation';
+import { useCart } from "../../context/CartContext";
+import styles from "./CartSidebar.module.css";
+import { useState } from "react";
+import OrderConfirmation from "../OrderConfirmation/OrderConfirmation";
 
 function CartSidebar({ onClose }) {
-  const { cartItems, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } = useCart();
+  const {
+    cartItems,
+    removeFromCart,
+    clearCart,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useCart();
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [confirmedItems, setConfirmedItems] = useState([]); // ✅ Aquí guardamos los productos confirmados
@@ -16,13 +22,13 @@ function CartSidebar({ onClose }) {
 
   const handleConfirmOrder = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/payment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("http://localhost:3000/api/payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items: cartItems }),
       });
 
-      if (!response.ok) throw new Error('Error en el pedido');
+      if (!response.ok) throw new Error("Error en el pedido");
 
       // const data = await response.json();
 
@@ -30,7 +36,7 @@ function CartSidebar({ onClose }) {
       setShowConfirmation(true);
       clearCart(); // ✅ Después de guardar, vaciamos el carrito
     } catch (error) {
-      console.error('Error al confirmar pedido:', error);
+      console.error("Error al confirmar pedido:", error);
     }
   };
 
@@ -57,10 +63,15 @@ function CartSidebar({ onClose }) {
     <>
       <div className={styles.overlay} onClick={onClose}></div>
       <div className={styles.sidebar}>
-        <button className={styles.close} onClick={onClose}>✕</button>
-        <h2>Your Cart ( {cartItems.length } )</h2>
+        <button className={styles.close} onClick={onClose}>
+          ✕
+        </button>
+        <h2>Your Cart ( {cartItems.length} )</h2>
         {cartItems.length === 0 ? (
-          <p className={styles.empty}>El carrito está vacío.</p>
+          <div className="carrito-vacio">
+            <p className={styles.empty}>El carrito está vacío.</p>
+            <img  src="/assets/images/illustration-empty-cart.svg" alt="Carrito vacío" />
+          </div>
         ) : (
           <>
             <ul className={styles.list}>
@@ -70,9 +81,13 @@ function CartSidebar({ onClose }) {
                   <div>
                     <p>{item.name}</p>
                     <div className={styles.controls}>
-                      <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                      <button onClick={() => decreaseQuantity(item.id)}>
+                        -
+                      </button>
                       <span>{item.quantity}</span>
-                      <button onClick={() => increaseQuantity(item.id)}>+</button>
+                      <button onClick={() => increaseQuantity(item.id)}>
+                        +
+                      </button>
                     </div>
                     <p>${(item.quantity * item.price).toFixed(2)}</p>
                   </div>
@@ -85,7 +100,10 @@ function CartSidebar({ onClose }) {
               <button onClick={clearCart}>Vaciar carrito</button>
             </div>
             <div className={styles.confirmar}>
-              <button className={styles['add-to-cart-btn']} onClick={handleConfirmOrder}>
+              <button
+                className={styles["add-to-cart-btn"]}
+                onClick={handleConfirmOrder}
+              >
                 Confirmar orden
               </button>
             </div>
