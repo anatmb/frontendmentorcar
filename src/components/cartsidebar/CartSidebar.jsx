@@ -58,7 +58,7 @@ function CartSidebar({ onClose }) {
       <div className={styles.overlay} onClick={onClose}></div>
       <div className={styles.sidebar}>
         <button className={styles.close} onClick={onClose}>✕</button>
-        <h2>Tu carrito</h2>
+        <h2>Your Cart ( {cartItems.length } )</h2>
         {cartItems.length === 0 ? (
           <p className={styles.empty}>El carrito está vacío.</p>
         ) : (
