@@ -69,32 +69,41 @@ function CartSidebar({ onClose }) {
         <h2>Your Cart ( {cartItems.length} )</h2>
         {cartItems.length === 0 ? (
           <div className="carrito-vacio">
-            <p className={styles.empty}>El carrito está vacíoooo.</p>
+         
             <img  src="/assets/images/illustration-empty-cart.svg" alt="Carrito vacío" />
+               <p className={styles.empty}>El carrito está vacíoooo.</p>
           </div>
         ) : (
           <>
-            <ul className={styles.list}>
-              {cartItems.map((item) => (
-                <li key={item.id} className={styles.item}>
-                  <img src={item.image.thumbnail} alt={item.name} />
-                  <div>
-                    <p>{item.name}</p>
-                    <div className={styles.controls}>
-                      <button onClick={() => decreaseQuantity(item.id)}>
-                        -
-                      </button>
-                      <span>{item.quantity}</span>
-                      <button onClick={() => increaseQuantity(item.id)}>
-                        +
-                      </button>
-                    </div>
-                    <p>${(item.quantity * item.price).toFixed(2)}</p>
-                  </div>
-                  <button onClick={() => removeFromCart(item.id)}>🗑️</button>
-                </li>
-              ))}
-            </ul>
+       <ul className={styles.list}>
+  {cartItems.map((item) => (
+    <li key={item.id} className={styles.item}>
+      {/* Imagen */}
+      <img src={item.image.thumbnail} alt={item.name} />
+
+      {/* Info + Controles */}
+      <div className={styles.itemInfo}>
+        <p className={styles.itemName}>{item.name}</p>
+        <div className={styles.controls}>
+          <button onClick={() => decreaseQuantity(item.id)}>-</button>
+          <span>{item.quantity}</span>
+          <button onClick={() => increaseQuantity(item.id)}>+</button>
+        </div>
+        <p className={styles.price}>
+          ${(item.quantity * item.price).toFixed(2)}
+        </p>
+      </div>
+
+      {/* Botón eliminar */}
+      <button
+        className={styles.deleteBtn}
+        onClick={() => removeFromCart(item.id)}
+      >
+        🗑️
+      </button>
+    </li>
+  ))}
+</ul>
             <div className={styles.total}>
               <strong>Total: ${totalPrice.toFixed(2)}</strong>
               <button onClick={clearCart}>Vaciar carrito</button>
